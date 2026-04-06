@@ -521,6 +521,9 @@ ENV PATH="${VIRTUAL_ENV}/bin:/usr/local/nvidia/bin:${PATH}" \
     VLLM_CACHE_ROOT=/tmp/vllm \
     UCX_MEM_MMAP_HOOK_MODE=none
 
+RUN uv pip install --upgrade transformers
+RUN uv pip install bitsandbytes>=0.48.1
+
 USER 2000
 WORKDIR /home/vllm
 
